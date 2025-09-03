@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Web Wizards - Custom Website Development</title>
+  <style>
+    /* Reset */
+    * {
+      margin: 0; padding: 0; box-sizing: border-box;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+    body {
+      background: #f0f4f8;
+      color: #333;
+      line-height: 1.6;
+    }
+    header {
+      background: #3b82f6;
+      color: white;
+      padding: 40px 20px;
+      text-align: center;
+      box-shadow: 0 4px 10px rgba(59,130,246,0.3);
+    }
+    header h1 {
+      font-size: 2.8rem;
+      margin-bottom: 10px;
+    }
+    header p {
+      font-size: 1.3rem;
+      font-weight: 300;
+    }
+    main {
+      max-width: 900px;
+      margin: 40px auto;
+      padding: 0 20px;
+    }
+    section {
+      margin-bottom: 50px;
+    }
+    h2 {
+      color: #1e40af;
+      margin-bottom: 15px;
+      font-weight: 700;
+      font-size: 2rem;
+      border-bottom: 3px solid #3b82f6;
+      display: inline-block;
+      padding-bottom: 5px;
+    }
+    p {
+      font-size: 1.1rem;
+      margin-bottom: 15px;
+    }
+    ul {
+      list-style-type: disc;
+      padding-left: 20px;
+      margin-bottom: 15px;
+    }
+    ul li {
+      margin-bottom: 8px;
+    }
+    form {
+      background: white;
+      padding: 25px;
+      border-radius: 8px;
+      box-shadow: 0 3px 15px rgba(0,0,0,0.1);
+    }
+    label {
+      display: block;
+      margin-bottom: 6px;
+      font-weight: 600;
+      color: #1e40af;
+    }
+    input, textarea {
+      width: 100%;
+      padding: 10px 12px;
+      margin-bottom: 20px;
+      border: 2px solid #d1d5db;
+      border-radius: 5px;
+      font-size: 1rem;
+      transition: border-color 0.3s ease;
+      font-family: inherit;
+    }
+    input:focus, textarea:focus {
+      border-color: #3b82f6;
+      outline: none;
+    }
+    button {
+      background: #3b82f6;
+      color: white;
+      padding: 14px 30px;
+      font-size: 1.1rem;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+      font-weight: 700;
+      width: 100%;
+    }
+    button:hover {
+      background: #2563eb;
+    }
+    footer {
+      text-align: center;
+      padding: 20px 10px;
+      background: #e0e7ff;
+      color: #1e40af;
+      font-weight: 600;
+    }
+    /* Responsive */
+    @media (max-width: 600px) {
+      header h1 {
+        font-size: 2rem;
+      }
+      h2 {
+        font-size: 1.5rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Web Wizards</h1>
+    <p>Your Partner in Building Stunning Custom Websites</p>
+  </header>
+
+  <main>
+    <section>
+      <h2>What We Do</h2>
+      <p>At Web Wizards, we specialize in creating beautiful, fast, and responsive websites tailored to your business needs. Whether you need a portfolio, online store, blog, or corporate site, we build it all!</p>
+    </section>
+
+    <section>
+      <h2>Why Choose Us?</h2>
+      <ul>
+        <li><strong>Expert Developers:</strong> Skilled in modern web technologies & best practices.</li>
+        <li><strong>Custom Designs:</strong> Unique, user-friendly interfaces that fit your brand.</li>
+        <li><strong>Responsive & Fast:</strong> Websites optimized for all devices and speed.</li>
+        <li><strong>Support & Maintenance:</strong> We’re here for you after launch.</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Place Your Order</h2>
+      <form id="orderForm">
+        <label for="name">Full Name</label>
+        <input type="text" id="name" placeholder="Your full name" required />
+
+        <label for="email">Email Address</label>
+        <input type="email" id="email" placeholder="Your email" required />
+
+        <label for="project">Project Details</label>
+        <textarea id="project" rows="5" placeholder="Tell us about your project" required></textarea>
+
+        <button type="submit">Submit Order</button>
+      </form>
+    </section>
+  </main>
+
+  <footer>
+    &copy; 2025 Web Wizards. All Rights Reserved.
+  </footer>
+
+  <script>
+    const form = document.getElementById('orderForm');
+    form.addEventListener('submit', (e) => {
+      e.preventDefault();
+
+      // Simple form validation is handled by required attribute already
+      const name = form.name.value.trim();
+      const email = form.email.value.trim();
+      const project = form.project.value.trim();
+
+      if (!name || !email || !project) {
+        alert('Please fill in all fields.');
+        return;
+      }
+
+      // Here you could send data to backend or email service
+
+      alert(`Thanks for your order, ${name}! We'll reach out to you shortly.`);
+
+      form.reset();
+    });
+  </script>
+  
+</body>
+</html>
